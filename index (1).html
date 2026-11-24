@@ -1,0 +1,3316 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bella Shoes | Calzado Importado de EE. UU. en Honduras</title>
+  <meta name="description" content="Tienda en línea Bella Shoes en Honduras. Calzado original importado desde Estados Unidos: Zara, Steve Madden, Nine West, Clarks y Calvin Klein." />
+
+  <!-- Tipografías Google Fonts: Playfair Display (Elegancia/Moda) + Plus Jakarta Sans (UI/Conversión) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Iconos Lucide (ligeros, nítidos y modernos) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* ==========================================================================
+       1. VARIABLES & DESIGN SYSTEM (Paleta Sobria & Confiable de Zapatería)
+       ========================================================================== */
+    :root {
+      --bg-primary: #FAF8F5;        /* Marfil cálido editorial */
+      --bg-secondary: #F2EDE4;      /* Arena suave */
+      --bg-card: #FFFFFF;           /* Blanco puro para contraste de producto */
+      --text-primary: #1C1917;      /* Carbón profundo (Stone 900) */
+      --text-secondary: #57534E;    /* Gris cálido (Stone 600) */
+      --text-muted: #78716C;        /* Gris suave (Stone 500) */
+      --accent-gold: #B08D57;       /* Dorado champán / cuero fino */
+      --accent-gold-hover: #967543;
+      --accent-gold-light: #F7F1E5;
+      --accent-espresso: #292524;   /* Café espresso oscuro */
+      --whatsapp-green: #1FAF58;    /* Verde WhatsApp optimizado para contraste */
+      --whatsapp-hover: #189649;
+      --border-subtle: #E7E2D8;
+      --shadow-sm: 0 2px 8px rgba(28, 25, 23, 0.04);
+      --shadow-md: 0 10px 25px -5px rgba(28, 25, 23, 0.07), 0 4px 10px -3px rgba(28, 25, 23, 0.04);
+      --shadow-lg: 0 20px 40px -10px rgba(28, 25, 23, 0.14);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* ==========================================================================
+       2. RESET & BASE STYLES
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .font-serif {
+      font-family: 'Playfair Display', Georgia, serif;
+      line-height: 1.2;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* ==========================================================================
+       3. COMPONENTES REUTILIZABLES (Botones, Badges, Etiquetas)
+       ========================================================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all var(--transition-fast);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+    }
+
+    .btn-primary {
+      background-color: var(--text-primary);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(28, 25, 23, 0.2);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent-gold);
+      box-shadow: 0 6px 20px rgba(176, 141, 87, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .btn-gold {
+      background-color: var(--accent-gold);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(176, 141, 87, 0.28);
+    }
+
+    .btn-gold:hover {
+      background-color: var(--accent-gold-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      color: var(--text-primary);
+      border: 1.5px solid var(--border-subtle);
+      background: #FFFFFF;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--text-primary);
+      background-color: var(--bg-secondary);
+    }
+
+    .btn-whatsapp {
+      background-color: var(--whatsapp-green);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(31, 175, 88, 0.25);
+    }
+
+    .btn-whatsapp:hover {
+      background-color: var(--whatsapp-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(31, 175, 88, 0.35);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .badge-available {
+      background-color: #ECFDF5;
+      color: #065F46;
+      border: 1px solid #A7F3D0;
+    }
+
+    .badge-imported {
+      background-color: var(--accent-gold-light);
+      color: #785A28;
+      border: 1px solid #E5D3B3;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 48px;
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent-gold);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(1.9rem, 3.5vw, 2.75rem);
+      color: var(--text-primary);
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      color: var(--text-secondary);
+      font-size: 1.02rem;
+    }
+
+    /* ==========================================================================
+       4. TOP ANNOUNCEMENT BAR & HEADER NAVEGACIÓN
+       ========================================================================== */
+    .top-bar {
+      background-color: var(--text-primary);
+      color: #FAF8F5;
+      font-size: 0.8rem;
+      padding: 8px 16px;
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+
+    .top-bar span {
+      color: #E5C58E;
+      font-weight: 600;
+    }
+
+    header.navbar {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      background: rgba(250, 248, 245, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: box-shadow var(--transition-fast);
+    }
+
+    header.navbar.scrolled {
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--text-primary), #3F3A36);
+      color: #E5C58E;
+      display: grid;
+      place-items: center;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.35rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1;
+      color: var(--text-primary);
+    }
+
+    .brand-tagline {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent-gold);
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      position: relative;
+      padding: 6px 0;
+      transition: color var(--transition-fast);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--accent-gold);
+      transition: width var(--transition-fast);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text-primary);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .cart-trigger {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background-color: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-fast);
+    }
+
+    .cart-trigger:hover {
+      border-color: var(--accent-gold);
+      transform: translateY(-1px);
+    }
+
+    .cart-badge {
+      background-color: var(--accent-gold);
+      color: #FFFFFF;
+      font-size: 0.75rem;
+      font-weight: 700;
+      min-width: 22px;
+      height: 22px;
+      padding: 0 6px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .cart-badge.bump {
+      transform: scale(1.3);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      padding: 8px;
+      color: var(--text-primary);
+    }
+
+    /* ==========================================================================
+       5. HERO SECTION (HOME)
+       ========================================================================== */
+    .hero {
+      position: relative;
+      padding: 64px 0 84px;
+      background: radial-gradient(circle at 85% 20%, rgba(176, 141, 87, 0.12), transparent 50%),
+                  linear-gradient(180deg, #FAF8F5 0%, #F3EDE2 100%);
+      border-bottom: 1px solid var(--border-subtle);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-pill .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--whatsapp-green);
+      box-shadow: 0 0 0 4px rgba(31, 175, 88, 0.15);
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 4.8vw, 3.85rem);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent-gold);
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 540px;
+      margin-bottom: 32px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 38px;
+    }
+
+    .hero-trust-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(28, 25, 23, 0.08);
+    }
+
+    .trust-stat strong {
+      display: block;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .trust-stat span {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    /* Showcase visual del Hero con foto real del catálogo */
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-card-showcase {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-subtle);
+      position: relative;
+      transform: rotate(1deg);
+      transition: transform var(--transition-smooth);
+    }
+
+    .hero-card-showcase:hover {
+      transform: rotate(0deg) translateY(-4px);
+    }
+
+    .hero-img-wrapper {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background-color: #F6F4F0;
+      aspect-ratio: 4 / 4.2;
+    }
+
+    .hero-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .hero-card-showcase:hover .hero-img-wrapper img {
+      transform: scale(1.04);
+    }
+
+    .hero-caption-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 14px;
+    }
+
+    .hero-floating-tag {
+      position: absolute;
+      bottom: -18px;
+      left: -20px;
+      background: var(--text-primary);
+      color: #FFFFFF;
+      padding: 14px 18px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 270px;
+    }
+
+    .hero-floating-tag i {
+      color: #E5C58E;
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       6. BENEFICIOS Y GARANTÍAS
+       ========================================================================== */
+    .benefits-section {
+      padding: 72px 0;
+      background-color: #FFFFFF;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .benefit-card {
+      padding: 28px 24px;
+      border-radius: var(--radius-md);
+      background-color: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      transition: all var(--transition-fast);
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent-gold);
+    }
+
+    .benefit-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background-color: var(--accent-gold-light);
+      color: var(--accent-gold);
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+    }
+
+    .benefit-card h3 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .benefit-card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    /* ==========================================================================
+       7. DESTACADOS & CATÁLOGO / TIENDA
+       ========================================================================== */
+    .featured-section {
+      padding: 80px 0 40px;
+    }
+
+    .catalog-section {
+      padding: 64px 0 96px;
+    }
+
+    /* Barra de herramientas: Buscador y Filtros */
+    .catalog-controls {
+      background-color: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr auto;
+      gap: 14px;
+      align-items: end;
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .control-group label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-secondary);
+    }
+
+    .input-with-icon {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-with-icon i {
+      position: absolute;
+      left: 12px;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .form-control {
+      width: 100%;
+      height: 44px;
+      padding: 0 14px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--border-subtle);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-size: 0.92rem;
+      transition: border-color var(--transition-fast), background-color var(--transition-fast);
+    }
+
+    .input-with-icon .form-control {
+      padding-left: 38px;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent-gold);
+      background-color: #FFFFFF;
+    }
+
+    .catalog-meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    /* Grid de Productos */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 28px;
+    }
+
+    .product-card {
+      background-color: var(--bg-card);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--transition-smooth), box-shadow var(--transition-smooth), border-color var(--transition-fast);
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: #D6C7B2;
+    }
+
+    .product-media {
+      position: relative;
+      aspect-ratio: 1 / 1.05;
+      background-color: #F5F2EC;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .product-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .product-card:hover .product-media img {
+      transform: scale(1.06);
+    }
+
+    .product-badges {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 6px;
+      pointer-events: none;
+    }
+
+    .product-code-tag {
+      position: absolute;
+      bottom: 10px;
+      left: 12px;
+      background: rgba(28, 25, 23, 0.78);
+      backdrop-filter: blur(4px);
+      color: #FFFFFF;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 6px;
+      letter-spacing: 0.04em;
+    }
+
+    .quick-view-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(28, 25, 23, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity var(--transition-fast);
+    }
+
+    .product-media:hover .quick-view-overlay {
+      opacity: 1;
+    }
+
+    .quick-view-pill {
+      background: #FFFFFF;
+      color: var(--text-primary);
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: var(--shadow-md);
+      transform: translateY(8px);
+      transition: transform var(--transition-fast);
+    }
+
+    .product-media:hover .quick-view-pill {
+      transform: translateY(0);
+    }
+
+    .product-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-brand-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .product-brand {
+      font-size: 0.76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-gold);
+    }
+
+    .product-color-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .color-swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      display: inline-block;
+    }
+
+    .product-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: color var(--transition-fast);
+    }
+
+    .product-title:hover {
+      color: var(--accent-gold);
+    }
+
+    .product-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .product-footer {
+      padding-top: 14px;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .product-price-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    .product-price {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .product-price-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .product-actions {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+    }
+
+    .btn-card-add {
+      padding: 10px 14px;
+      font-size: 0.88rem;
+    }
+
+    .btn-card-wa {
+      padding: 10px 12px;
+      border-radius: var(--radius-sm);
+      background-color: #ECFDF5;
+      color: #065F46;
+      border: 1px solid #A7F3D0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-fast);
+    }
+
+    .btn-card-wa:hover {
+      background-color: var(--whatsapp-green);
+      color: #FFFFFF;
+      border-color: var(--whatsapp-green);
+    }
+
+    /* ==========================================================================
+       8. QUIÉNES SOMOS & TESTIMONIOS
+       ========================================================================== */
+    .about-section {
+      padding: 90px 0;
+      background-color: var(--bg-secondary);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 64px;
+    }
+
+    .about-story-card {
+      background: #FFFFFF;
+      padding: 36px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-md);
+    }
+
+    .about-story-card h3 {
+      font-size: 1.65rem;
+      margin-bottom: 16px;
+    }
+
+    .about-story-card p {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      font-size: 0.96rem;
+    }
+
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .step-item {
+      background: #FFFFFF;
+      padding: 20px 22px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .step-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background-color: var(--text-primary);
+      color: #E5C58E;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .step-item h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .step-item p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .testimonial-card {
+      background: #FFFFFF;
+      padding: 26px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .stars {
+      color: #D97706;
+      display: flex;
+      gap: 2px;
+      margin-bottom: 12px;
+    }
+
+    .testimonial-text {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      font-style: italic;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .author-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--accent-gold-light);
+      color: var(--accent-gold);
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+      font-size: 0.85rem;
+    }
+
+    /* ==========================================================================
+       9. CONTÁCTANOS
+       ========================================================================== */
+    .contact-section {
+      padding: 90px 0;
+      background-color: var(--bg-primary);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .contact-info-box {
+      background: var(--text-primary);
+      color: #FAF8F5;
+      padding: 38px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .contact-info-box h3 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+      color: #FFFFFF;
+    }
+
+    .contact-info-box > p {
+      color: #D6D3D1;
+      font-size: 0.95rem;
+      margin-bottom: 28px;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: 30px;
+    }
+
+    .contact-list-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .contact-list-item i {
+      color: #E5C58E;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .contact-list-item strong {
+      display: block;
+      font-size: 0.9rem;
+      color: #FFFFFF;
+    }
+
+    .contact-list-item span {
+      font-size: 0.88rem;
+      color: #A8A29E;
+    }
+
+    .contact-form-card {
+      background: #FFFFFF;
+      padding: 38px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-field {
+      margin-bottom: 18px;
+    }
+
+    .form-field label {
+      display: block;
+      font-size: 0.84rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-primary);
+    }
+
+    textarea.form-control {
+      height: auto;
+      padding: 12px 14px;
+      resize: vertical;
+    }
+
+    /* ==========================================================================
+       10. DRAWER DE CARRITO DE COMPRAS (CON CHECKOUT WHATSAPP BUSINESS)
+       ========================================================================== */
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(28, 25, 23, 0.55);
+      backdrop-filter: blur(4px);
+      z-index: 1100;
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-smooth);
+    }
+
+    .drawer-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      max-width: 450px;
+      height: 100vh;
+      background: #FFFFFF;
+      z-index: 1200;
+      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.18);
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform var(--transition-smooth);
+    }
+
+    .cart-drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg-primary);
+    }
+
+    .drawer-header h3 {
+      font-size: 1.35rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon-close {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--text-secondary);
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      transition: all var(--transition-fast);
+    }
+
+    .icon-close:hover {
+      background: var(--text-primary);
+      color: #FFFFFF;
+    }
+
+    .drawer-body {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 20px 24px;
+    }
+
+    .cart-empty-state {
+      text-align: center;
+      padding: 56px 20px;
+      color: var(--text-secondary);
+    }
+
+    .cart-empty-state i {
+      color: var(--accent-gold);
+      margin-bottom: 14px;
+    }
+
+    .cart-item {
+      display: flex;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-subtle);
+      animation: fadeIn 0.25s ease;
+    }
+
+    .cart-item-img {
+      width: 76px;
+      height: 76px;
+      border-radius: 10px;
+      object-fit: cover;
+      background: #F5F2EC;
+      border: 1px solid var(--border-subtle);
+      flex-shrink: 0;
+    }
+
+    .cart-item-info {
+      flex-grow: 1;
+      min-width: 0;
+    }
+
+    .cart-item-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .cart-item-meta {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+
+    .cart-item-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .qty-stepper {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--bg-primary);
+    }
+
+    .qty-btn {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      color: var(--text-primary);
+      transition: background var(--transition-fast);
+    }
+
+    .qty-btn:hover {
+      background: var(--border-subtle);
+    }
+
+    .qty-val {
+      min-width: 28px;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .cart-item-price {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+    }
+
+    .remove-item-btn {
+      color: var(--text-muted);
+      padding: 4px;
+      transition: color var(--transition-fast);
+    }
+
+    .remove-item-btn:hover {
+      color: #DC2626;
+    }
+
+    .drawer-footer {
+      padding: 20px 24px;
+      background: var(--bg-primary);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+
+    .summary-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-top: 12px;
+      margin-top: 8px;
+      border-top: 1px dashed var(--border-subtle);
+      margin-bottom: 16px;
+    }
+
+    .summary-total span:first-child {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .summary-total span:last-child {
+      font-weight: 700;
+      font-size: 1.4rem;
+      color: var(--text-primary);
+    }
+
+    /* ==========================================================================
+       11. VENTANA MODAL PREMIUM DE PRODUCTO
+       ========================================================================== */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(28, 25, 23, 0.65);
+      backdrop-filter: blur(6px);
+      z-index: 1300;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-smooth);
+    }
+
+    .modal-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .product-modal {
+      background: #FFFFFF;
+      width: 100%;
+      max-width: 900px;
+      max-height: 92vh;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.28);
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1.05fr;
+      transform: scale(0.94) translateY(14px);
+      transition: transform var(--transition-smooth);
+    }
+
+    .modal-backdrop.open .product-modal {
+      transform: scale(1) translateY(0);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 10;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--border-subtle);
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-fast);
+    }
+
+    .modal-close-btn:hover {
+      background: var(--text-primary);
+      color: #FFFFFF;
+      transform: rotate(90deg);
+    }
+
+    .modal-gallery {
+      background: #F5F2EC;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      min-height: 360px;
+    }
+
+    .modal-gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .modal-gallery:hover img {
+      transform: scale(1.08);
+    }
+
+    .modal-photo-disclaimer {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      right: 12px;
+      background: rgba(28, 25, 23, 0.8);
+      color: #FAF8F5;
+      font-size: 0.74rem;
+      padding: 6px 12px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .modal-details {
+      padding: 34px 32px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      background: var(--bg-primary);
+      padding: 14px 16px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-subtle);
+      margin: 18px 0;
+    }
+
+    .spec-box span {
+      display: block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+
+    .spec-box strong {
+      font-size: 0.92rem;
+      color: var(--text-primary);
+    }
+
+    .modal-actions {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-top: 16px;
+    }
+
+    /* ==========================================================================
+       12. CHATBOT FLOTANTE MODERNO (ASISTENTE VIRTUAL BELLA AI)
+       ========================================================================== */
+    .chatbot-wrapper {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 1050;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .chatbot-launcher {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--text-primary) 0%, #3A342F 100%);
+      color: #FFFFFF;
+      padding: 13px 20px;
+      border-radius: 999px;
+      box-shadow: 0 12px 30px rgba(28, 25, 23, 0.28);
+      border: 1px solid rgba(229, 197, 142, 0.35);
+      transition: all var(--transition-fast);
+    }
+
+    .chatbot-launcher:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 16px 36px rgba(28, 25, 23, 0.36);
+    }
+
+    .bot-avatar-ring {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #D4AF37, #B08D57);
+      display: grid;
+      place-items: center;
+      color: #1C1917;
+      position: relative;
+    }
+
+    .bot-online-dot {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #22C55E;
+      border: 2px solid var(--text-primary);
+    }
+
+    .chatbot-window {
+      width: 375px;
+      max-width: calc(100vw - 32px);
+      height: 530px;
+      max-height: calc(100vh - 110px);
+      background: #FFFFFF;
+      border-radius: 20px;
+      box-shadow: 0 24px 60px rgba(28, 25, 23, 0.24);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      margin-bottom: 14px;
+      transform-origin: bottom right;
+      transform: scale(0.85) translateY(20px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .chatbot-window.open {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .chat-header {
+      background: linear-gradient(135deg, #1C1917 0%, #2E2925 100%);
+      color: #FFFFFF;
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .chat-header-info {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .chat-header-title {
+      font-weight: 700;
+      font-size: 0.96rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ai-pill {
+      font-size: 0.65rem;
+      background: rgba(229, 197, 142, 0.2);
+      color: #E5C58E;
+      border: 1px solid rgba(229, 197, 142, 0.4);
+      padding: 1px 6px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .chat-header-sub {
+      font-size: 0.76rem;
+      color: #A8A29E;
+    }
+
+    .chat-messages {
+      flex-grow: 1;
+      padding: 16px;
+      overflow-y: auto;
+      background: #FAF8F5;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .chat-msg {
+      max-width: 84%;
+      padding: 11px 14px;
+      border-radius: 16px;
+      font-size: 0.87rem;
+      line-height: 1.48;
+      animation: fadeIn 0.25s ease;
+    }
+
+    .chat-msg.bot {
+      background: #FFFFFF;
+      color: var(--text-primary);
+      border: 1px solid var(--border-subtle);
+      border-bottom-left-radius: 4px;
+      align-self: flex-start;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+    }
+
+    .chat-msg.user {
+      background: var(--text-primary);
+      color: #FFFFFF;
+      border-bottom-right-radius: 4px;
+      align-self: flex-end;
+    }
+
+    .typing-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 12px 16px;
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      border-bottom-left-radius: 4px;
+      align-self: flex-start;
+    }
+
+    .typing-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+      animation: bounceTyping 1.2s infinite ease-in-out;
+    }
+
+    .typing-dot:nth-child(2) { animation-delay: 0.15s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.3s; }
+
+    .chat-quick-chips {
+      padding: 10px 14px;
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .chat-quick-chips::-webkit-scrollbar {
+      display: none;
+    }
+
+    .chip-btn {
+      white-space: nowrap;
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      transition: all var(--transition-fast);
+    }
+
+    .chip-btn:hover {
+      background: var(--accent-gold-light);
+      border-color: var(--accent-gold);
+      color: var(--text-primary);
+    }
+
+    .chat-input-bar {
+      padding: 10px 12px;
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      gap: 8px;
+    }
+
+    .chat-input-bar input {
+      flex-grow: 1;
+      border: 1px solid var(--border-subtle);
+      border-radius: 999px;
+      padding: 9px 15px;
+      font-size: 0.86rem;
+      background: var(--bg-primary);
+    }
+
+    .chat-input-bar input:focus {
+      outline: none;
+      border-color: var(--accent-gold);
+      background: #FFFFFF;
+    }
+
+    .chat-send-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+      color: #FFFFFF;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      transition: background var(--transition-fast);
+    }
+
+    .chat-send-btn:hover {
+      background: var(--accent-gold-hover);
+    }
+
+    /* ==========================================================================
+       13. TOAST NOTIFICATIONS & FOOTER
+       ========================================================================== */
+    .toast-container {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      z-index: 1400;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      pointer-events: none;
+    }
+
+    .toast {
+      background: var(--text-primary);
+      color: #FFFFFF;
+      padding: 12px 18px;
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      border-left: 4px solid var(--accent-gold);
+      animation: slideInLeft 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    footer {
+      background: #171412;
+      color: #A8A29E;
+      padding: 60px 0 28px;
+      font-size: 0.9rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 36px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-heading {
+      color: #FFFFFF;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a:hover {
+      color: #E5C58E;
+    }
+
+    .footer-bottom {
+      padding-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 0.82rem;
+    }
+
+    /* ==========================================================================
+       14. ANIMACIONES & MEDIA QUERIES RESPONSIVE
+       ========================================================================== */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes bounceTyping {
+      0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+      40% { transform: scale(1); opacity: 1; }
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid, .about-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .catalog-controls {
+        grid-template-columns: 1fr 1fr;
+      }
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: #FAF8F5;
+        flex-direction: column;
+        padding: 20px;
+        gap: 16px;
+        border-bottom: 1px solid var(--border-subtle);
+        box-shadow: var(--shadow-md);
+      }
+      .nav-links.mobile-open {
+        display: flex;
+      }
+      .mobile-menu-btn {
+        display: inline-flex;
+      }
+      .product-modal {
+        grid-template-columns: 1fr;
+        max-height: 90vh;
+      }
+      .modal-gallery {
+        min-height: 240px;
+        max-height: 280px;
+      }
+      .catalog-controls {
+        grid-template-columns: 1fr;
+      }
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .hero-floating-tag {
+        position: static;
+        margin-top: 14px;
+        max-width: 100%;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRA SUPERIOR DE CONFIANZA -->
+  <div class="top-bar">
+    <span>100% Originales Importados de EE. UU.</span> · Envíos seguros a todo Honduras · Atención directa por WhatsApp
+  </div>
+
+  <!-- NAVEGACIÓN PRINCIPAL -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="brand-logo" aria-label="Inicio Bella Shoes">
+        <div class="brand-icon">B</div>
+        <div class="brand-text">
+          <span class="brand-name">Bella Shoes</span>
+          <span class="brand-tagline">USA Import · Honduras</span>
+        </div>
+      </a>
+
+      <nav aria-label="Menú principal">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="active">Inicio</a></li>
+          <li><a href="#catalogo">Catálogo / Tienda</a></li>
+          <li><a href="#quienes-somos">Quiénes Somos</a></li>
+          <li><a href="#contactanos">Contáctanos</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button type="button" class="cart-trigger" id="openCartBtn" aria-label="Abrir carrito de compras">
+          <i data-lucide="shopping-bag" size="19"></i>
+          <span>Carrito</span>
+          <span class="cart-badge" id="headerCartCount">0</span>
+        </button>
+
+        <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menú móvil">
+          <i data-lucide="menu" size="24"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========================================================================
+         SECCIÓN 1: HOME (HERO + BENEFICIOS + ZAPATOS DESTACADOS)
+         ======================================================================== -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-pill">
+            <span class="dot"></span>
+            <span>Catálogo Actualizado · Entrega Inmediata en Honduras</span>
+          </div>
+
+          <h1 class="hero-title">
+            Elegancia importada desde <em>Estados Unidos</em> a tus pasos.
+          </h1>
+
+          <p class="hero-desc">
+            Descubre nuestra selección curada de calzado femenino original de marcas reconocidas como <strong>Zara, Steve Madden, Nine West, Clarks y Calvin Klein</strong>. Calidad auténtica, precios transparentes en Lempiras y reserva directa sin complicaciones.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#catalogo" class="btn btn-primary">
+              <span>Ver catálogo</span>
+              <i data-lucide="arrow-right" size="18"></i>
+            </a>
+            <a href="https://wa.me/50497988287?text=Hola%20%F0%9F%98%8A%20Vengo%20de%20la%20tienda%20web%20Bella%20Shoes%20y%20me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa%20sobre%20los%20zapatos%20disponibles." target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              <i data-lucide="message-circle" size="18" style="color: var(--whatsapp-green);"></i>
+              <span>Asesoría por WhatsApp</span>
+            </a>
+          </div>
+
+          <div class="hero-trust-strip">
+            <div class="trust-stat">
+              <strong>100% USA</strong>
+              <span>Importación verificada</span>
+            </div>
+            <div class="trust-stat">
+              <strong>Fotos Reales</strong>
+              <span>Ves exactamente lo que compras</span>
+            </div>
+            <div class="trust-stat">
+              <strong>Todo Honduras</strong>
+              <span>Envíos nacionales seguros</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card-showcase">
+            <div class="hero-img-wrapper">
+              <!-- Foto real #2 del catálogo oficial -->
+              <img
+                src="https://lh3.googleusercontent.com/d/1ksKtmkY_OQHMplzS2wRjaKlT54KzMUMC"
+                alt="Zapato alto cerrado Steven Madden Dorado - Foto real del catálogo Bella Shoes"
+                loading="eager"
+              />
+            </div>
+            <div class="hero-caption-bar">
+              <div>
+                <span class="badge badge-imported" style="margin-bottom:4px;">Destacado USA</span>
+                <h2 style="font-size:1.15rem;">Zapato alto cerrado · Steven Madden</h2>
+              </div>
+              <div style="text-align:right;">
+                <span style="display:block; font-size:0.75rem; color:var(--text-muted);">Precio</span>
+                <strong style="font-size:1.15rem; color:var(--accent-gold);">L 1,280.00</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-floating-tag">
+            <i data-lucide="shield-check" size="26"></i>
+            <div style="font-size:0.8rem; line-height:1.35;">
+              <strong>Garantía de Autenticidad</strong><br />
+              <span style="color:#D6D3D1;">Cada par es inspeccionado antes de su entrega.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFICIOS / GARANTÍAS / POR QUÉ COMPRAR CON NOSOTROS -->
+    <section class="benefits-section" aria-label="Beneficios y garantías">
+      <div class="container">
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i data-lucide="plane" size="24"></i>
+            </div>
+            <h3>Importación Directa EE. UU.</h3>
+            <p>Traemos modelos exclusivos desde tiendas oficiales en Estados Unidos hasta Honduras.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i data-lucide="camera" size="24"></i>
+            </div>
+            <h3>Fotografía Real del Artículo</h3>
+            <p>Sin sorpresas: cada imagen corresponde exactamente al par disponible en nuestro inventario.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i data-lucide="truck" size="24"></i>
+            </div>
+            <h3>Envíos a Todo el País</h3>
+            <p>Coordinamos entregas locales y envíos seguros por encomienda a nivel nacional.</p>
+          </div>
+
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i data-lucide="message-square-heart" size="24"></i>
+            </div>
+            <h3>Reserva Fácil sin Riesgos</h3>
+            <p>Arma tu carrito y confirma tallas, disponibilidad y método de pago directo por WhatsApp.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ZAPATOS DESTACADOS -->
+    <section class="featured-section" aria-label="Zapatos destacados">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Selección Exclusiva</span>
+          <h2 class="section-title">Zapatos Destacados de Temporada</h2>
+          <p class="section-subtitle">
+            Siluetas atemporales en tonos dorados y rojos vibrantes para eventos especiales, oficina o salidas de noche.
+          </p>
+        </div>
+
+        <div class="products-grid" id="featuredGrid"></div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECCIÓN 2: CATÁLOGO / TIENDA COMPLETA (CON BUSCADOR Y FILTROS)
+         ======================================================================== -->
+    <section id="catalogo" class="catalog-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Inventario Disponible en Honduras</span>
+          <h2 class="section-title">Catálogo Oficial Bella Shoes</h2>
+          <p class="section-subtitle">
+            Explora nuestros modelos importados disponibles. Haz clic en cualquier zapato para ver su ficha detallada o agrégalo al carrito para cotizar por WhatsApp.
+          </p>
+        </div>
+
+        <!-- Filtros y Buscador -->
+        <div class="catalog-controls" role="region" aria-label="Filtros del catálogo">
+          <div class="control-group">
+            <label for="searchInput">Buscar zapato o marca</label>
+            <div class="input-with-icon">
+              <i data-lucide="search" size="17"></i>
+              <input type="text" id="searchInput" class="form-control" placeholder="Ej. Sandalia, Zara, Clarks..." />
+            </div>
+          </div>
+
+          <div class="control-group">
+            <label for="brandFilter">Marca</label>
+            <select id="brandFilter" class="form-control">
+              <option value="all">Todas las marcas</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="colorFilter">Color</label>
+            <select id="colorFilter" class="form-control">
+              <option value="all">Todos los colores</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="priceFilter">Rango de precio (L)</label>
+            <select id="priceFilter" class="form-control">
+              <option value="all">Todos los precios</option>
+              <option value="under-800">Menos de L 800.00</option>
+              <option value="800-1000">L 800.00 – L 1,000.00</option>
+              <option value="over-1000">Más de L 1,000.00</option>
+            </select>
+          </div>
+
+          <button type="button" id="resetFiltersBtn" class="btn btn-outline" style="height:44px; padding:0 16px;" title="Limpiar filtros">
+            <i data-lucide="rotate-ccw" size="16"></i>
+            <span>Limpiar</span>
+          </button>
+        </div>
+
+        <div class="catalog-meta-bar">
+          <span id="resultsCount">Mostrando 5 productos</span>
+          <a href="https://wa.me/50497988287?text=Hola%20%F0%9F%98%8A%20Estoy%20viendo%20el%20cat%C3%A1logo%20de%20Bella%20Shoes%20y%20quiero%20consultar%20disponibilidad%20de%20tallas." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding:8px 16px; font-size:0.84rem;">
+            <i data-lucide="message-circle" size="16"></i>
+            <span>Consultar catálogo por WhatsApp</span>
+          </a>
+        </div>
+
+        <!-- Grid principal de productos -->
+        <div class="products-grid" id="catalogGrid"></div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECCIÓN 3: QUIÉNES SOMOS (HISTORIA, IMPORTACIÓN, TRANSPARENCIA Y TESTIMONIOS)
+         ======================================================================== -->
+    <section id="quienes-somos" class="about-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Nuestra Esencia</span>
+          <h2 class="section-title">Quiénes Somos</h2>
+          <p class="section-subtitle">
+            Conectamos la moda internacional de Estados Unidos con mujeres en Honduras que buscan distinción, comodidad y confianza al comprar.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-story-card">
+            <span class="badge badge-imported" style="margin-bottom:12px;">Respaldo & Transparencia</span>
+            <h3>Calzado auténtico seleccionado par por par</h3>
+            <p>
+              <strong>Bella Shoes</strong> nació con una misión clara: ofrecer en Honduras calzado femenino importado directamente desde Estados Unidos de marcas reconocidas mundialmente, eliminando la incertidumbre de las compras por encargo sin garantía.
+            </p>
+            <p>
+              Cada par publicado en nuestro catálogo ya se encuentra disponible para gestión inmediata, fotografiado con total transparencia para que aprecies sus acabados, textura y color real antes de realizar tu reserva.
+            </p>
+            <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:22px; padding-top:18px; border-top:1px solid var(--border-subtle);">
+              <div style="display:flex; align-items:center; gap:8px; font-size:0.88rem; font-weight:600;">
+                <i data-lucide="check-circle-2" size="18" style="color:var(--whatsapp-green);"></i>
+                <span>Marcas 100% Originales</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:8px; font-size:0.88rem; font-weight:600;">
+                <i data-lucide="check-circle-2" size="18" style="color:var(--whatsapp-green);"></i>
+                <span>Precios claros en Lempiras</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="process-steps">
+            <div class="step-item">
+              <div class="step-num">1</div>
+              <div>
+                <h4>Selección en Tiendas Oficiales de EE. UU.</h4>
+                <p>Curamos estilos elegantes de marcas como Zara, Steve Madden, Nine West, Clarks y Calvin Klein.</p>
+              </div>
+            </div>
+
+            <div class="step-item">
+              <div class="step-num">2</div>
+              <div>
+                <h4>Importación Segura e Inspección</h4>
+                <p>Verificamos el estado impecable de cada zapato al llegar a Honduras y registramos su fotografía real.</p>
+              </div>
+            </div>
+
+            <div class="step-item">
+              <div class="step-num">3</div>
+              <div>
+                <h4>Reserva Personalizada y Entrega</h4>
+                <p>Eliges tus favoritos en la web, envías tu lista por WhatsApp y coordinamos pago y entrega rápida.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonios Simulados -->
+        <h3 style="text-align:center; font-size:1.55rem; margin-bottom:24px;">Lo que dicen nuestras clientas en Honduras</h3>
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <div class="stars" aria-label="5 de 5 estrellas">
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+            </div>
+            <p class="testimonial-text">
+              "Pedí los zapatos dorados Nine West para una boda y llegaron idénticos a la foto. La atención por WhatsApp fue súper rápida y amable."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">AM</div>
+              <div>
+                <strong style="display:block; font-size:0.9rem;">Andrea Mejía</strong>
+                <span style="font-size:0.78rem; color:var(--text-muted);">Tegucigalpa · Compra verificada</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="stars" aria-label="5 de 5 estrellas">
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+            </div>
+            <p class="testimonial-text">
+              "Me encanta que sean marcas originales de Estados Unidos y que ya estén en el país. Los Clarks rojos son comodísimos para trabajar."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">VR</div>
+              <div>
+                <strong style="display:block; font-size:0.9rem;">Valeria Rodríguez</strong>
+                <span style="font-size:0.78rem; color:var(--text-muted);">San Pedro Sula · Compra verificada</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="stars" aria-label="5 de 5 estrellas">
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+              <i data-lucide="star" size="16" fill="currentColor"></i>
+            </div>
+            <p class="testimonial-text">
+              "Muy buena experiencia. Armé mi carrito en la página, mandé el resumen por WhatsApp y ese mismo día coordinamos el envío."
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">CL</div>
+              <div>
+                <strong style="display:block; font-size:0.9rem;">Camila López</strong>
+                <span style="font-size:0.78rem; color:var(--text-muted);">La Ceiba · Compra verificada</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         SECCIÓN 4: CONTÁCTANOS
+         ======================================================================== -->
+    <section id="contactanos" class="contact-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-eyebrow">Atención Personalizada</span>
+          <h2 class="section-title">Contáctanos</h2>
+          <p class="section-subtitle">
+            ¿Deseas confirmar tallas disponibles, coordinar una entrega o solicitar información de un modelo? Escríbenos directamente.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info-box">
+            <h3>Hablemos hoy mismo</h3>
+            <p>
+              Nuestro equipo en Honduras responde tus consultas de inventario, envíos y reservas de manera ágil.
+            </p>
+
+            <div class="contact-list">
+              <div class="contact-list-item">
+                <i data-lucide="phone" size="20"></i>
+                <div>
+                  <strong>WhatsApp Business Oficial</strong>
+                  <span>+504 9798-8287</span>
+                </div>
+              </div>
+
+              <div class="contact-list-item">
+                <i data-lucide="map-pin" size="20"></i>
+                <div>
+                  <strong>Cobertura de Entregas</strong>
+                  <span>Entregas locales y envíos seguros a todo Honduras</span>
+                </div>
+              </div>
+
+              <div class="contact-list-item">
+                <i data-lucide="clock" size="20"></i>
+                <div>
+                  <strong>Horario de Atención</strong>
+                  <span>Lunes a Sábado: 8:30 AM – 6:30 PM</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <a href="https://wa.me/50497988287?text=Hola%20%F0%9F%98%8A%20Me%20gustar%C3%ADa%20ponerme%20en%20contacto%20con%20Bella%20Shoes%20para%20consultar%20sobre%20sus%20zapatos." target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width:100%;">
+                <i data-lucide="message-circle" size="19"></i>
+                <span>Escribir directo al WhatsApp (+504 9798-8287)</span>
+              </a>
+              <a href="tel:+50497988287" class="btn btn-outline" style="width:100%; background:rgba(255,255,255,0.08); color:#FFFFFF; border-color:rgba(255,255,255,0.2);">
+                <i data-lucide="phone-call" size="18"></i>
+                <span>Llamar ahora</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-form-card">
+            <h3 style="font-size:1.5rem; margin-bottom:6px;">Envíanos tu consulta</h3>
+            <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:22px;">
+              Completa tus datos y te conectaremos al instante con nuestro asesor por WhatsApp.
+            </p>
+
+            <form id="contactForm">
+              <div class="form-grid-2">
+                <div class="form-field">
+                  <label for="contactName">Nombre completo *</label>
+                  <input type="text" id="contactName" class="form-control" placeholder="Ej. María Fernanda" required />
+                </div>
+                <div class="form-field">
+                  <label for="contactCity">Ciudad / Departamento *</label>
+                  <input type="text" id="contactCity" class="form-control" placeholder="Ej. San Pedro Sula, Cortés" required />
+                </div>
+              </div>
+
+              <div class="form-field">
+                <label for="contactInterest">Modelo de interés (Opcional)</label>
+                <select id="contactInterest" class="form-control">
+                  <option value="Consulta general">Consulta general sobre el catálogo</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="contactMessage">Mensaje *</label>
+                <textarea id="contactMessage" rows="4" class="form-control" placeholder="Cuéntanos qué talla buscas o cómo podemos ayudarte..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width:100%;">
+                <i data-lucide="send" size="18"></i>
+                <span>Enviar consulta por WhatsApp</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand-logo" style="margin-bottom:14px;">
+            <div class="brand-icon">B</div>
+            <div class="brand-text">
+              <span class="brand-name" style="color:#FFFFFF;">Bella Shoes</span>
+              <span class="brand-tagline">USA Import · Honduras</span>
+            </div>
+          </div>
+          <p style="max-width:320px; line-height:1.6;">
+            Tienda especializada en calzado femenino original importado desde Estados Unidos para toda Honduras. Estilo, autenticidad y atención personalizada.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navegación</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#catalogo">Catálogo / Tienda</a></li>
+            <li><a href="#quienes-somos">Quiénes Somos</a></li>
+            <li><a href="#contactanos">Contáctanos</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Marcas en Catálogo</h4>
+          <ul class="footer-links">
+            <li><a href="#catalogo" onclick="quickFilterBrand('Zara')">Zara</a></li>
+            <li><a href="#catalogo" onclick="quickFilterBrand('Steven Madden')">Steven Madden</a></li>
+            <li><a href="#catalogo" onclick="quickFilterBrand('Nine west')">Nine west</a></li>
+            <li><a href="#catalogo" onclick="quickFilterBrand('Clarks')">Clarks</a></li>
+            <li><a href="#catalogo" onclick="quickFilterBrand('Calvin klein')">Calvin klein</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Atención Directa</h4>
+          <ul class="footer-links">
+            <li>WhatsApp: +504 9798-8287</li>
+            <li>Envíos a todo Honduras</li>
+            <li>Lun – Sáb: 8:30 AM – 6:30 PM</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="currentYear"></span> Bella Shoes Honduras. Todos los derechos reservados.</span>
+        <span>Precios expresados en Lempiras (L) · Sujeto a disponibilidad de inventario.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       DRAWER LATERAL: CARRITO DE COMPRAS
+       ========================================================================== -->
+  <div class="drawer-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrito de compras" aria-hidden="true">
+    <div class="drawer-header">
+      <h3>
+        <i data-lucide="shopping-bag" size="21" style="color:var(--accent-gold);"></i>
+        <span>Tu Carrito</span>
+      </h3>
+      <button type="button" class="icon-close" id="closeCartBtn" aria-label="Cerrar carrito">
+        <i data-lucide="x" size="19"></i>
+      </button>
+    </div>
+
+    <div class="drawer-body" id="cartItemsContainer">
+      <!-- Renderizado dinámicamente por JS -->
+    </div>
+
+    <div class="drawer-footer" id="cartFooter" style="display:none;">
+      <div class="summary-row">
+        <span>Artículos seleccionados</span>
+        <span id="cartTotalItems">0 pares</span>
+      </div>
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">L 0.00</span>
+      </div>
+      <div class="summary-row">
+        <span>Envío</span>
+        <span style="color:var(--accent-gold); font-weight:600;">A coordinar en WhatsApp</span>
+      </div>
+      <div class="summary-total">
+        <span>Total Referencial</span>
+        <span id="cartTotal">L 0.00</span>
+      </div>
+
+      <button type="button" id="checkoutWhatsAppBtn" class="btn btn-whatsapp" style="width:100%; padding:14px; font-size:1rem;">
+        <i data-lucide="message-circle" size="20"></i>
+        <span>Finalizar pedido por WhatsApp</span>
+      </button>
+
+      <button type="button" id="clearCartBtn" style="width:100%; margin-top:10px; font-size:0.8rem; color:var(--text-muted); text-decoration:underline;">
+        Vaciar carrito
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       MODAL PREMIUM DE PRODUCTO
+       ========================================================================== -->
+  <div class="modal-backdrop" id="productModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalProductTitle">
+    <div class="product-modal">
+      <button type="button" class="modal-close-btn" id="closeModalBtn" aria-label="Cerrar detalle del producto">
+        <i data-lucide="x" size="20"></i>
+      </button>
+
+      <div class="modal-gallery">
+        <img id="modalProductImg" src="" alt="" />
+        <div class="modal-photo-disclaimer">
+          <i data-lucide="check-circle" size="15" style="color:#4ADE80; flex-shrink:0;"></i>
+          <span>Fotografía real del zapato disponible en Bella Shoes</span>
+        </div>
+      </div>
+
+      <div class="modal-details">
+        <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px;">
+          <span class="badge badge-available" id="modalAvailability">Disponible</span>
+          <span class="badge badge-imported">Importado EE. UU.</span>
+        </div>
+
+        <span id="modalProductBrand" class="product-brand" style="font-size:0.85rem;">MARCA</span>
+        <h2 id="modalProductTitle" style="font-size:1.85rem; margin:4px 0 8px;">Nombre del Zapato</h2>
+        <div id="modalProductPrice" style="font-size:1.65rem; font-weight:700; color:var(--text-primary);">L 0.00</div>
+
+        <div class="modal-specs-grid">
+          <div class="spec-box">
+            <span>Código / ID</span>
+            <strong id="modalProductCode">BS-001</strong>
+          </div>
+          <div class="spec-box">
+            <span>Color</span>
+            <strong id="modalProductColor">Dorado</strong>
+          </div>
+          <div class="spec-box">
+            <span>Categoría</span>
+            <strong id="modalProductCategory">Calzado Femenino</strong>
+          </div>
+          <div class="spec-box">
+            <span>Talla / Stock</span>
+            <strong id="modalProductSize">N/D (Consultar)</strong>
+          </div>
+        </div>
+
+        <p id="modalProductDesc" style="color:var(--text-secondary); font-size:0.94rem; line-height:1.6;">
+          Descripción detallada del artículo.
+        </p>
+
+        <div class="modal-actions">
+          <button type="button" id="modalAddToCartBtn" class="btn btn-primary" style="width:100%; padding:14px;">
+            <i data-lucide="shopping-bag" size="18"></i>
+            <span>Agregar al carrito</span>
+          </button>
+
+          <a id="modalDirectWhatsAppBtn" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width:100%; padding:13px;">
+            <i data-lucide="message-circle" size="18"></i>
+            <span>Cotizar este par por WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       CHATBOT FLOTANTE MODERNO (ASISTENTE VIRTUAL BELLA AI)
+       ========================================================================== -->
+  <div class="chatbot-wrapper">
+    <div class="chatbot-window" id="chatbotWindow" role="region" aria-label="Asistente virtual Bella Shoes">
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <div class="bot-avatar-ring">
+            <i data-lucide="sparkles" size="17"></i>
+            <span class="bot-online-dot"></span>
+          </div>
+          <div>
+            <div class="chat-header-title">
+              <span>Bella Assistant</span>
+              <span class="ai-pill">IA</span>
+            </div>
+            <div class="chat-header-sub">En línea · Asesora de Calzado</div>
+          </div>
+        </div>
+        <button type="button" id="closeChatBtn" style="color:#D6D3D1; padding:4px;" aria-label="Minimizar chat">
+          <i data-lucide="chevron-down" size="22"></i>
+        </button>
+      </div>
+
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-msg bot">
+          ¡Hola! 👋 Soy <strong>Bella</strong>, tu asesora virtual de <strong>Bella Shoes Honduras</strong>. Estoy aquí para ayudarte con nuestro catálogo importado de EE. UU., horarios, entregas o seguimiento de tu reserva. ¿En qué te apoyo hoy?
+        </div>
+      </div>
+
+      <div class="chat-quick-chips" aria-label="Preguntas frecuentes rápidas">
+        <button type="button" class="chip-btn" data-question="productos">👠 Productos</button>
+        <button type="button" class="chip-btn" data-question="horarios">🕒 Horarios</button>
+        <button type="button" class="chip-btn" data-question="entregas">🚚 Entregas</button>
+        <button type="button" class="chip-btn" data-question="financiamientos">💳 Pagos</button>
+        <button type="button" class="chip-btn" data-question="pruebas">✨ Prueba/Tallas</button>
+        <button type="button" class="chip-btn" data-question="seguimiento">📦 Seguimiento</button>
+        <button type="button" class="chip-btn" data-question="contacto">📲 Contacto</button>
+      </div>
+
+      <form class="chat-input-bar" id="chatForm">
+        <input type="text" id="chatInput" placeholder="Escribe tu consulta aquí..." autocomplete="off" />
+        <button type="submit" class="chat-send-btn" aria-label="Enviar mensaje">
+          <i data-lucide="send" size="16"></i>
+        </button>
+      </form>
+    </div>
+
+    <button type="button" class="chatbot-launcher" id="toggleChatBtn" aria-label="Abrir asistente virtual">
+      <div class="bot-avatar-ring">
+        <i data-lucide="sparkles" size="17"></i>
+        <span class="bot-online-dot"></span>
+      </div>
+      <span style="font-weight:600; font-size:0.9rem;">¿Necesitas ayuda?</span>
+    </button>
+  </div>
+
+  <!-- CONTENEDOR DE NOTIFICACIONES TOAST -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- ==========================================================================
+       JAVASCRIPT: DATASET OFICIAL, LÓGICA DE TIENDA, MODAL, CARRITO WA & CHATBOT
+       ========================================================================== -->
+  <script>
+    /**
+     * 1. DATASET INICIAL DEL CATÁLOGO OFICIAL BELLA SHOES
+     * Estrictamente fiel a los 5 zapatos proporcionados en el documento fuente.
+     * Campos faltantes en el documento (como talla específica o SKU) se manejan como "N/D" o código correlativo de catálogo (#1 - #5).
+     */
+    const SHOES_CATALOG = [
+      {
+        id: "CAT-01",
+        codigo: "BS-001",
+        nombre: "Sandalia abierta",
+        foto: "https://lh3.googleusercontent.com/d/1GX_MVxf7SUdOzeQbwiyHckpTZmJx-ESL",
+        marca: "Zara",
+        color: "Dorada",
+        colorHex: "#D4AF37",
+        precio: 950.00,
+        categoria: "Sandalias",
+        disponibilidad: "Disponible",
+        origen: "Importado EE. UU.",
+        talla: "N/D",
+        destacado: true,
+        descripcionBreve: "Sandalia abierta de diseño estilizado en acabado dorado, ideal para eventos y ocasiones especiales.",
+        descripcionDetallada: "Sandalia abierta original marca Zara importada desde Estados Unidos, en elegante tonalidad Dorada. Su diseño abierto brinda frescura y sofisticación, convirtiéndola en una pieza versátil para celebraciones de día o de noche. Fotografía real del artículo disponible."
+      },
+      {
+        id: "CAT-02",
+        codigo: "BS-002",
+        nombre: "Zapato alto cerrado",
+        foto: "https://lh3.googleusercontent.com/d/1ksKtmkY_OQHMplzS2wRjaKlT54KzMUMC",
+        marca: "Steven Madden",
+        color: "Dorado",
+        colorHex: "#C5A028",
+        precio: 1280.00,
+        categoria: "Tacones Cerrados",
+        disponibilidad: "Disponible",
+        origen: "Importado EE. UU.",
+        talla: "N/D",
+        destacado: true,
+        descripcionBreve: "Zapato alto cerrado en tono dorado con silueta clásica y acabado refinado de Steven Madden.",
+        descripcionDetallada: "Zapato alto cerrado original de la firma Steven Madden, importado directamente desde Estados Unidos en color Dorado. Combina altura estilizada con estructura cerrada para un porte distinguido y firme. Imagen real correspondiente al producto en venta."
+      },
+      {
+        id: "CAT-03",
+        codigo: "BS-003",
+        nombre: "Zapato alto con diamante",
+        foto: "https://lh3.googleusercontent.com/d/17ZKIGxAGdQ_IQ-KyOO6NRwAeiClNYh_U",
+        marca: "Nine west",
+        color: "Dorado",
+        colorHex: "#DFC163",
+        precio: 700.00,
+        categoria: "Tacones de Gala",
+        disponibilidad: "Disponible",
+        origen: "Importado EE. UU.",
+        talla: "N/D",
+        destacado: true,
+        descripcionBreve: "Zapato alto dorado con detalle de diamante decorativo que aporta brillo sutil y elegancia.",
+        descripcionDetallada: "Zapato alto con diamante de la reconocida marca Nine west, importado desde Estados Unidos en color Dorado. Destaca por su aplicación decorativa tipo diamante que realza cualquier atuendo formal o de fiesta. Fotografía real del par disponible."
+      },
+      {
+        id: "CAT-04",
+        codigo: "BS-004",
+        nombre: "Zapato alto cerrado",
+        foto: "https://lh3.googleusercontent.com/d/1y52U4L-L2DxA9cvOfRFd3vjnqS_QKz2B",
+        marca: "Clarks",
+        color: "Rojo",
+        colorHex: "#B91C1C",
+        precio: 825.00,
+        categoria: "Tacones Cerrados",
+        disponibilidad: "Disponible",
+        origen: "Importado EE. UU.",
+        talla: "N/D",
+        destacado: false,
+        descripcionBreve: "Zapato alto cerrado en color rojo intenso, reconocido por el confort característico de Clarks.",
+        descripcionDetallada: "Zapato alto cerrado original marca Clarks, importado desde Estados Unidos en un vibrante color Rojo. Diseñado para ofrecer equilibrio entre presencia ejecutiva y comodidad prolongada. La foto muestra exactamente el artículo disponible."
+      },
+      {
+        id: "CAT-05",
+        codigo: "BS-005",
+        nombre: "Zapato alto semiabierto",
+        foto: "https://lh3.googleusercontent.com/d/1YqhG7PsRq24SLVpQ40j8gURBw1Bz_Xss",
+        marca: "Calvin klein",
+        color: "Rojo",
+        colorHex: "#991B1B",
+        precio: 825.00,
+        categoria: "Tacones Semiabiertos",
+        disponibilidad: "Disponible",
+        origen: "Importado EE. UU.",
+        talla: "N/D",
+        destacado: false,
+        descripcionBreve: "Zapato alto semiabierto en tono rojo sofisticado con estética minimalista de Calvin klein.",
+        descripcionDetallada: "Zapato alto semiabierto original de Calvin klein, importado desde Estados Unidos en color Rojo. Su corte semiabierto estiliza el pie con un toque moderno y femenino. Fotografía real del calzado disponible en Bella Shoes."
+      }
+    ];
+
+    // Número oficial de WhatsApp Business
+    const WHATSAPP_NUMBER = "50497988287";
+    const CART_STORAGE_KEY = "bella_shoes_hn_cart_v1";
+
+    // Estado de la aplicación
+    let cart = loadCartFromStorage();
+    let activeModalProductId = null;
+
+    /**
+     * 2. UTILIDADES DE FORMATO Y PERSISTENCIA
+     */
+    function formatLempiras(amount) {
+      const numeric = Number(amount) || 0;
+      return "L " + numeric.toLocaleString("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+    }
+
+    function loadCartFromStorage() {
+      try {
+        const saved = localStorage.getItem(CART_STORAGE_KEY);
+        return saved ? JSON.parse(saved) : [];
+      } catch (e) {
+        console.warn("No se pudo leer localStorage:", e);
+        return [];
+      }
+    }
+
+    function saveCartToStorage() {
+      try {
+        localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+      } catch (e) {
+        console.warn("No se pudo guardar en localStorage:", e);
+      }
+    }
+
+    function showToast(message) {
+      const container = document.getElementById("toastContainer");
+      const toast = document.createElement("div");
+      toast.className = "toast";
+      toast.innerHTML = `<i data-lucide="check-circle-2" size="18" style="color:#E5C58E;"></i><span>${message}</span>`;
+      container.appendChild(toast);
+      lucide.createIcons({ nodes: [toast] });
+
+      setTimeout(() => {
+        toast.style.opacity = "0";
+        toast.style.transform = "translateX(-16px)";
+        toast.style.transition = "all 0.25s ease";
+        setTimeout(() => toast.remove(), 260);
+      }, 2800);
+    }
+
+    /**
+     * 3. RENDERIZADO DE TARJETAS DE PRODUCTO (DESTACADOS & CATÁLOGO)
+     */
+    function createProductCardHTML(shoe) {
+      const singleWhatsAppText = encodeURIComponent(
+        `Hola 😊 Me interesa cotizar y conocer disponibilidad de este zapato que vi en la web de Bella Shoes:\n\n` +
+        `• Modelo: ${shoe.nombre}\n` +
+        `• Marca: ${shoe.marca}\n` +
+        `• Color: ${shoe.color}\n` +
+        `• Código: ${shoe.codigo}\n` +
+        `• Precio: ${formatLempiras(shoe.precio)}\n\n` +
+        `¿Me confirmas disponibilidad de talla y próximos pasos para reservarlo?`
+      );
+
+      return `
+        <article class="product-card" data-id="${shoe.id}">
+          <div class="product-media" onclick="openProductModal('${shoe.id}')">
+            <img
+              src="${shoe.foto}"
+              alt="${shoe.nombre} - ${shoe.marca} color ${shoe.color} (Foto real del zapato en venta)"
+              loading="lazy"
+            />
+            <div class="product-badges">
+              <span class="badge badge-available">${shoe.disponibilidad}</span>
+              <span class="badge badge-imported">${shoe.origen}</span>
+            </div>
+            <span class="product-code-tag">Cód: ${shoe.codigo} · Foto real</span>
+            <div class="quick-view-overlay">
+              <span class="quick-view-pill">
+                <i data-lucide="eye" size="15"></i>
+                <span>Ver detalle</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="product-body">
+            <div class="product-brand-row">
+              <span class="product-brand">${shoe.marca}</span>
+              <span class="product-color-chip">
+                <span class="color-swatch" style="background-color:${shoe.colorHex};"></span>
+                ${shoe.color}
+              </span>
+            </div>
+
+            <h3 class="product-title" onclick="openProductModal('${shoe.id}')">${shoe.nombre}</h3>
+            <p class="product-desc">${shoe.descripcionBreve}</p>
+
+            <div class="product-footer">
+              <div class="product-price-row">
+                <span class="product-price">${formatLempiras(shoe.precio)}</span>
+                <span class="product-price-note">Talla: ${shoe.talla}</span>
+              </div>
+
+              <div class="product-actions">
+                <button type="button" class="btn btn-primary btn-card-add" onclick="addToCart('${shoe.id}')">
+                  <i data-lucide="shopping-bag" size="16"></i>
+                  <span>Agregar</span>
+                </button>
+                <a
+                  href="https://wa.me/${WHATSAPP_NUMBER}?text=${singleWhatsAppText}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-card-wa"
+                  title="Consultar este par por WhatsApp"
+                  aria-label="Consultar ${shoe.nombre} ${shoe.marca} por WhatsApp"
+                >
+                  <i data-lucide="message-circle" size="18"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderFeaturedProducts() {
+      const container = document.getElementById("featuredGrid");
+      const featured = SHOES_CATALOG.filter(item => item.destacado);
+      container.innerHTML = featured.map(createProductCardHTML).join("");
+    }
+
+    function populateFilterOptions() {
+      const brandSelect = document.getElementById("brandFilter");
+      const colorSelect = document.getElementById("colorFilter");
+      const contactSelect = document.getElementById("contactInterest");
+
+      const brands = [...new Set(SHOES_CATALOG.map(s => s.marca))];
+      const colors = [...new Set(SHOES_CATALOG.map(s => s.color))];
+
+      brands.forEach(brand => {
+        const opt = document.createElement("option");
+        opt.value = brand;
+        opt.textContent = brand;
+        brandSelect.appendChild(opt);
+      });
+
+      colors.forEach(color => {
+        const opt = document.createElement("option");
+        opt.value = color;
+        opt.textContent = color;
+        colorSelect.appendChild(opt);
+      });
+
+      SHOES_CATALOG.forEach(shoe => {
+        const opt = document.createElement("option");
+        opt.value = `${shoe.nombre} - ${shoe.marca} (${shoe.color}) [${shoe.codigo}]`;
+        opt.textContent = `${shoe.nombre} · ${shoe.marca} (${shoe.color}) - ${formatLempiras(shoe.precio)}`;
+        contactSelect.appendChild(opt);
+      });
+    }
+
+    function applyCatalogFilters() {
+      const query = document.getElementById("searchInput").value.trim().toLowerCase();
+      const brand = document.getElementById("brandFilter").value;
+      const color = document.getElementById("colorFilter").value;
+      const priceRange = document.getElementById("priceFilter").value;
+
+      const filtered = SHOES_CATALOG.filter(shoe => {
+        const matchesQuery =
+          !query ||
+          shoe.nombre.toLowerCase().includes(query) ||
+          shoe.marca.toLowerCase().includes(query) ||
+          shoe.color.toLowerCase().includes(query) ||
+          shoe.codigo.toLowerCase().includes(query);
+
+        const matchesBrand = brand === "all" || shoe.marca === brand;
+        const matchesColor = color === "all" || shoe.color === color;
+
+        let matchesPrice = true;
+        if (priceRange === "under-800") matchesPrice = shoe.precio < 800;
+        else if (priceRange === "800-1000") matchesPrice = shoe.precio >= 800 && shoe.precio <= 1000;
+        else if (priceRange === "over-1000") matchesPrice = shoe.precio > 1000;
+
+        return matchesQuery && matchesBrand && matchesColor && matchesPrice;
+      });
+
+      const grid = document.getElementById("catalogGrid");
+      const resultsCount = document.getElementById("resultsCount");
+
+      resultsCount.textContent = `Mostrando ${filtered.length} de ${SHOES_CATALOG.length} zapatos disponibles`;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align:center; padding:54px 20px; background:#FFFFFF; border-radius:var(--radius-md); border:1px solid var(--border-subtle);">
+            <i data-lucide="search-x" size="36" style="color:var(--accent-gold); margin:0 auto 12px;"></i>
+            <h3 style="font-size:1.3rem; margin-bottom:6px;">No encontramos coincidencias</h3>
+            <p style="color:var(--text-secondary); margin-bottom:18px;">Prueba ajustando los filtros de marca, color o rango de precio.</p>
+            <button type="button" class="btn btn-outline" onclick="resetCatalogFilters()">Restablecer filtros</button>
+          </div>
+        `;
+      } else {
+        grid.innerHTML = filtered.map(createProductCardHTML).join("");
+      }
+
+      lucide.createIcons();
+    }
+
+    function resetCatalogFilters() {
+      document.getElementById("searchInput").value = "";
+      document.getElementById("brandFilter").value = "all";
+      document.getElementById("colorFilter").value = "all";
+      document.getElementById("priceFilter").value = "all";
+      applyCatalogFilters();
+    }
+
+    window.quickFilterBrand = function(brandName) {
+      document.getElementById("brandFilter").value = brandName;
+      applyCatalogFilters();
+    };
+
+    /**
+     * 4. MODAL PREMIUM DE PRODUCTO
+     */
+    window.openProductModal = function(productId) {
+      const shoe = SHOES_CATALOG.find(item => item.id === productId);
+      if (!shoe) return;
+
+      activeModalProductId = shoe.id;
+
+      document.getElementById("modalProductImg").src = shoe.foto;
+      document.getElementById("modalProductImg").alt = `${shoe.nombre} - ${shoe.marca} ${shoe.color}`;
+      document.getElementById("modalAvailability").textContent = shoe.disponibilidad;
+      document.getElementById("modalProductBrand").textContent = shoe.marca;
+      document.getElementById("modalProductTitle").textContent = shoe.nombre;
+      document.getElementById("modalProductPrice").textContent = formatLempiras(shoe.precio);
+      document.getElementById("modalProductCode").textContent = shoe.codigo;
+      document.getElementById("modalProductColor").textContent = shoe.color;
+      document.getElementById("modalProductCategory").textContent = shoe.categoria;
+      document.getElementById("modalProductSize").textContent = `${shoe.talla} (Confirmar en WA)`;
+      document.getElementById("modalProductDesc").textContent = shoe.descripcionDetallada;
+
+      const waMsg = encodeURIComponent(
+        `Hola 😊 Me interesa cotizar y conocer disponibilidad de este zapato que vi en su web Bella Shoes:\n\n` +
+        `• Modelo: ${shoe.nombre}\n` +
+        `• Marca: ${shoe.marca}\n` +
+        `• Color: ${shoe.color}\n` +
+        `• Código: ${shoe.codigo}\n` +
+        `• Precio: ${formatLempiras(shoe.precio)}\n\n` +
+        `¿Me confirmas disponibilidad y próximos pasos?`
+      );
+      document.getElementById("modalDirectWhatsAppBtn").href = `https://wa.me/${WHATSAPP_NUMBER}?text=${waMsg}`;
+
+      const backdrop = document.getElementById("productModalBackdrop");
+      backdrop.classList.add("open");
+      document.body.style.overflow = "hidden";
+      lucide.createIcons();
+    };
+
+    function closeProductModal() {
+      const backdrop = document.getElementById("productModalBackdrop");
+      backdrop.classList.remove("open");
+      document.body.style.overflow = "";
+      activeModalProductId = null;
+    }
+
+    /**
+     * 5. LÓGICA DEL CARRITO DE COMPRAS + PERSISTENCIA + WHATSAPP BUSINESS CHECKOUT
+     */
+    window.addToCart = function(productId) {
+      const shoe = SHOES_CATALOG.find(item => item.id === productId);
+      if (!shoe) return;
+
+      const existingItem = cart.find(item => item.id === productId);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({
+          id: shoe.id,
+          codigo: shoe.codigo,
+          nombre: shoe.nombre,
+          marca: shoe.marca,
+          color: shoe.color,
+          precio: shoe.precio,
+          foto: shoe.foto,
+          quantity: 1
+        });
+      }
+
+      saveCartToStorage();
+      renderCart();
+      animateCartBadge();
+      showToast(`Agregaste "${shoe.nombre} (${shoe.marca})" al carrito`);
+    };
+
+    window.updateCartQuantity = function(productId, delta) {
+      const idx = cart.findIndex(item => item.id === productId);
+      if (idx === -1) return;
+
+      cart[idx].quantity += delta;
+      if (cart[idx].quantity <= 0) {
+        cart.splice(idx, 1);
+      }
+
+      saveCartToStorage();
+      renderCart();
+    };
+
+    window.removeFromCart = function(productId) {
+      cart = cart.filter(item => item.id !== productId);
+      saveCartToStorage();
+      renderCart();
+      showToast("Artículo eliminado del carrito");
+    };
+
+    function clearCart() {
+      cart = [];
+      saveCartToStorage();
+      renderCart();
+      showToast("El carrito ha sido vaciado");
+    }
+
+    function animateCartBadge() {
+      const badge = document.getElementById("headerCartCount");
+      badge.classList.remove("bump");
+      void badge.offsetWidth;
+      badge.classList.add("bump");
+    }
+
+    function renderCart() {
+      const container = document.getElementById("cartItemsContainer");
+      const footer = document.getElementById("cartFooter");
+      const badge = document.getElementById("headerCartCount");
+
+      const totalQty = cart.reduce((acc, item) => acc + item.quantity, 0);
+      const subtotal = cart.reduce((acc, item) => acc + (item.precio * item.quantity), 0);
+
+      badge.textContent = totalQty;
+
+      if (cart.length === 0) {
+        footer.style.display = "none";
+        container.innerHTML = `
+          <div class="cart-empty-state">
+            <i data-lucide="shopping-bag" size="46"></i>
+            <h4 style="font-size:1.15rem; color:var(--text-primary); margin-bottom:6px;">Tu carrito está vacío</h4>
+            <p style="font-size:0.9rem; margin-bottom:20px;">
+              Explora nuestro catálogo importado de Estados Unidos y selecciona los zapatos que deseas reservar.
+            </p>
+            <button type="button" class="btn btn-primary" onclick="closeCartDrawer(); location.href='#catalogo';">
+              Explorar catálogo
+            </button>
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      footer.style.display = "block";
+      document.getElementById("cartTotalItems").textContent = `${totalQty} ${totalQty === 1 ? "par" : "pares"}`;
+      document.getElementById("cartSubtotal").textContent = formatLempiras(subtotal);
+      document.getElementById("cartTotal").textContent = formatLempiras(subtotal);
+
+      container.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <img src="${item.foto}" alt="${item.nombre}" class="cart-item-img" />
+          <div class="cart-item-info">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:8px;">
+              <div class="cart-item-title">${item.nombre}</div>
+              <button type="button" class="remove-item-btn" onclick="removeFromCart('${item.id}')" aria-label="Eliminar ${item.nombre}">
+                <i data-lucide="trash-2" size="16"></i>
+              </button>
+            </div>
+            <div class="cart-item-meta">
+              ${item.marca} · Color: ${item.color} · Cód: ${item.codigo}
+            </div>
+            <div class="cart-item-bottom">
+              <div class="qty-stepper">
+                <button type="button" class="qty-btn" onclick="updateCartQuantity('${item.id}', -1)" aria-label="Disminuir cantidad">−</button>
+                <span class="qty-val">${item.quantity}</span>
+                <button type="button" class="qty-btn" onclick="updateCartQuantity('${item.id}', 1)" aria-label="Aumentar cantidad">+</button>
+              </div>
+              <div class="cart-item-price">${formatLempiras(item.precio * item.quantity)}</div>
+            </div>
+          </div>
+        </div>
+      `).join("");
+
+      lucide.createIcons();
+    }
+
+    function openCartDrawer() {
+      document.getElementById("cartBackdrop").classList.add("open");
+      document.getElementById("cartDrawer").classList.add("open");
+      document.getElementById("cartDrawer").setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    window.closeCartDrawer = function() {
+      document.getElementById("cartBackdrop").classList.remove("open");
+      document.getElementById("cartDrawer").classList.remove("open");
+      document.getElementById("cartDrawer").setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    };
+
+    /**
+     * FLUJO PRINCIPAL DE CHECKOUT POR WHATSAPP BUSINESS (+50497988287)
+     */
+    function handleWhatsAppCheckout() {
+      if (cart.length === 0) {
+        showToast("Agrega al menos un zapato al carrito antes de finalizar");
+        return;
+      }
+
+      const totalReferencial = cart.reduce((acc, item) => acc + (item.precio * item.quantity), 0);
+
+      const itemsListText = cart.map((item, index) => {
+        const lineSubtotal = formatLempiras(item.precio * item.quantity);
+        return (
+          `${index + 1}. *${item.nombre}* — Marca: ${item.marca} | Color: ${item.color} | ` +
+          `Código: ${item.codigo} | Cant.: ${item.quantity} | Precio unit.: ${formatLempiras(item.precio)} (Subtotal: ${lineSubtotal})`
+        );
+      }).join("\n");
+
+      const rawMessage =
+        `Hola 😊 Me interesa cotizar y conocer disponibilidad de estos zapatos que vi en su web *Bella Shoes* para realizar mi reserva:\n\n` +
+        `*Detalle de mi selección:*\n` +
+        `${itemsListText}\n\n` +
+        `*Total referencial:* ${formatLempiras(totalReferencial)}\n\n` +
+        `¿Me confirmas disponibilidad y próximos pasos? Quedo atento(a) para coordinar una llamada, entrega o visita. ¡Muchas gracias!`;
+
+      const encodedText = encodeURIComponent(rawMessage);
+      const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedText}`;
+
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    }
+
+    /**
+     * 6. CHATBOT FLOTANTE INTELIGENTE (BELLA ASSISTANT)
+     * Responde a: horarios, pruebas de manejo (adaptado de forma natural a prueba de calce/tallas),
+     * financiamientos/pagos, entregas, productos, contacto, soporte técnico y seguimiento de pedidos.
+     */
+    const BOT_KNOWLEDGE_BASE = [
+      {
+        keys: ["horario", "hora", "abierto", "atienden", "atencion"],
+        response:
+          "🕒 <strong>Nuestros horarios de atención:</strong><br>• Lunes a Sábado de <strong>8:30 AM a 6:30 PM</strong>.<br>• Por WhatsApp (+504 9798-8287) puedes dejar tu carrito o consulta las 24 horas y te respondemos a primera hora."
+      },
+      {
+        keys: ["prueba", "probar", "manejo", "talla", "calce", "medida", "medir"],
+        response:
+          "✨ <strong>Prueba de calce y tallas:</strong><br>Si te preguntas por <em>pruebas (como una prueba de manejo pero para tus zapatos 😉)</em> o medidas exactas: antes de cerrar tu compra te enviamos medidas de plantilla en centímetros y coordinamos entrega presencial o prueba según tu ciudad. ¡Queremos que te queden perfectos!"
+      },
+      {
+        keys: ["financiamiento", "pago", "pagar", "transferencia", "efectivo", "cuota", "tarjeta", "credito"],
+        response:
+          "💳 <strong>Métodos de pago y facilidades:</strong><br>• Aceptamos transferencia bancaria en Honduras (BAC, Atlántida, Ficohsa, Occidente), depósito y pago contra entrega en zonas habilitadas.<br>• También puedes consultar por <strong>reserva con prima</strong> directamente con nuestro asesor en WhatsApp."
+      },
+      {
+        keys: ["entrega", "envio", "enviar", "domicilio", "encomienda", "ciudad", "tegucigalpa", "san pedro", "honduras"],
+        response:
+          "🚚 <strong>Entregas y envíos en Honduras:</strong><br>• Realizamos entregas personalizadas locales y envíos seguros a nivel nacional mediante empresas de encomienda confiables (24 a 48 horas hábiles tras confirmar tu pedido)."
+      },
+      {
+        keys: ["producto", "catalogo", "zapato", "marca", "precio", "zara", "madden", "nine", "clarks", "calvin", "dorado", "rojo"],
+        response:
+          "👠 <strong>Nuestro Catálogo Importado de EE. UU. actual incluye:</strong><br>• <strong>Sandalia abierta Zara</strong> (Dorada) – L 950.00<br>• <strong>Zapato alto cerrado Steven Madden</strong> (Dorado) – L 1,280.00<br>• <strong>Zapato alto con diamante Nine west</strong> (Dorado) – L 700.00<br>• <strong>Zapato alto cerrado Clarks</strong> (Rojo) – L 825.00<br>• <strong>Zapato alto semiabierto Calvin klein</strong> (Rojo) – L 825.00"
+      },
+      {
+        keys: ["seguimiento", "pedido", "orden", "rastreo", "estado", "paquete", "guia"],
+        response:
+          "📦 <strong>Seguimiento de pedidos:</strong><br>Una vez confirmada tu reserva por WhatsApp, te compartimos el comprobante y número de guía de envío. Puedes consultar el estado en tiempo real escribiendo a nuestro WhatsApp oficial <strong>+504 9798-8287</strong>."
+      },
+      {
+        keys: ["soporte", "tecnico", "error", "problema", "web", "carrito", "ayuda"],
+        response:
+          "🛠️ <strong>Soporte técnico y ayuda en la tienda:</strong><br>Si tienes algún inconveniente agregando pares al carrito o abriendo WhatsApp, puedes escribirnos directamente al <strong>+504 9798-8287</strong> o usar el formulario en la sección <em>Contáctanos</em> y tomaremos tu pedido manualmente."
+      },
+      {
+        keys: ["contacto", "whatsapp", "telefono", "llamar", "numero", "asesor"],
+        response:
+          "📲 <strong>Contacto directo Bella Shoes:</strong><br>• WhatsApp Business: <strong>+504 9798-8287</strong><br>• Puedes hacer clic en <a href='https://wa.me/50497988287' target='_blank' style='color:var(--whatsapp-green); font-weight:700; text-decoration:underline;'>abrir chat directo aquí</a> para hablar con una asesora."
+      }
+    ];
+
+    function normalizeText(str) {
+      return str
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+    }
+
+    function getBotReply(userText) {
+      const clean = normalizeText(userText);
+
+      if (clean.match(/\b(hola|buenos dias|buenas tardes|buenas noches|hey|saludos)\b/)) {
+        return "¡Hola! 😊 Qué gusto saludarte. Puedo darte información sobre nuestros <strong>productos importados, horarios, pruebas de talla, formas de pago/financiamiento, entregas o seguimiento de pedidos</strong>. ¿Qué te gustaría consultar?";
+      }
+
+      for (const topic of BOT_KNOWLEDGE_BASE) {
+        if (topic.keys.some(key => clean.includes(key))) {
+          return topic.response;
+        }
+      }
+
+      return (
+        "¡Gracias por tu consulta! ✨ Para brindarte una respuesta exacta sobre ese detalle, te recomiendo seleccionar una de las opciones rápidas abajo o escribir directamente a nuestro WhatsApp Business <strong>+504 9798-8287</strong> donde una asesora te atenderá de inmediato."
+      );
+    }
+
+    function appendChatMessage(htmlContent, sender = "bot") {
+      const messagesBox = document.getElementById("chatMessages");
+      const msgDiv = document.createElement("div");
+      msgDiv.className = `chat-msg ${sender}`;
+      msgDiv.innerHTML = htmlContent;
+      messagesBox.appendChild(msgDiv);
+      messagesBox.scrollTop = messagesBox.scrollHeight;
+    }
+
+    function sendUserChatMessage(text) {
+      const trimmed = text.trim();
+      if (!trimmed) return;
+
+      appendChatMessage(trimmed, "user");
+
+      const messagesBox = document.getElementById("chatMessages");
+      const typingDiv = document.createElement("div");
+      typingDiv.className = "typing-indicator";
+      typingDiv.innerHTML = `<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>`;
+      messagesBox.appendChild(typingDiv);
+      messagesBox.scrollTop = messagesBox.scrollHeight;
+
+      setTimeout(() => {
+        typingDiv.remove();
+        const reply = getBotReply(trimmed);
+        appendChatMessage(reply, "bot");
+      }, 550);
+    }
+
+    /**
+     * 7. INICIALIZACIÓN Y EVENT LISTENERS
+     */
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+      // Render inicial
+      renderFeaturedProducts();
+      populateFilterOptions();
+      applyCatalogFilters();
+      renderCart();
+
+      // Filtros en vivo
+      document.getElementById("searchInput").addEventListener("input", applyCatalogFilters);
+      document.getElementById("brandFilter").addEventListener("change", applyCatalogFilters);
+      document.getElementById("colorFilter").addEventListener("change", applyCatalogFilters);
+      document.getElementById("priceFilter").addEventListener("change", applyCatalogFilters);
+      document.getElementById("resetFiltersBtn").addEventListener("click", resetCatalogFilters);
+
+      // Carrito Drawer
+      document.getElementById("openCartBtn").addEventListener("click", openCartDrawer);
+      document.getElementById("closeCartBtn").addEventListener("click", closeCartDrawer);
+      document.getElementById("cartBackdrop").addEventListener("click", closeCartDrawer);
+      document.getElementById("checkoutWhatsAppBtn").addEventListener("click", handleWhatsAppCheckout);
+      document.getElementById("clearCartBtn").addEventListener("click", clearCart);
+
+      // Modal de producto
+      document.getElementById("closeModalBtn").addEventListener("click", closeProductModal);
+      document.getElementById("productModalBackdrop").addEventListener("click", (e) => {
+        if (e.target.id === "productModalBackdrop") closeProductModal();
+      });
+      document.getElementById("modalAddToCartBtn").addEventListener("click", () => {
+        if (activeModalProductId) {
+          addToCart(activeModalProductId);
+          closeProductModal();
+        }
+      });
+
+      // Cerrar modales con tecla Escape
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          closeProductModal();
+          closeCartDrawer();
+        }
+      });
+
+      // Menú móvil
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const navLinks = document.getElementById("navLinks");
+      mobileMenuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("mobile-open");
+      });
+      navLinks.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => navLinks.classList.remove("mobile-open"));
+      });
+
+      // Efecto sombra en navbar al hacer scroll
+      window.addEventListener("scroll", () => {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 20) navbar.classList.add("scrolled");
+        else navbar.classList.remove("scrolled");
+      });
+
+      // Formulario de contacto -> Redirige a WhatsApp con datos estructurados
+      document.getElementById("contactForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const name = document.getElementById("contactName").value.trim();
+        const city = document.getElementById("contactCity").value.trim();
+        const interest = document.getElementById("contactInterest").value;
+        const message = document.getElementById("contactMessage").value.trim();
+
+        const contactWaText = encodeURIComponent(
+          `Hola 😊 Mi nombre es *${name}* (desde ${city}) y me comunico desde la web *Bella Shoes*.\n\n` +
+          `• Interés: ${interest}\n` +
+          `• Consulta: ${message}\n\n` +
+          `¿Me pueden brindar información? ¡Gracias!`
+        );
+
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${contactWaText}`, "_blank", "noopener,noreferrer");
+        showToast("Abriendo WhatsApp con tu consulta...");
+        e.target.reset();
+      });
+
+      // Chatbot Flotante
+      const chatWindow = document.getElementById("chatbotWindow");
+      document.getElementById("toggleChatBtn").addEventListener("click", () => {
+        chatWindow.classList.toggle("open");
+      });
+      document.getElementById("closeChatBtn").addEventListener("click", () => {
+        chatWindow.classList.remove("open");
+      });
+
+      document.getElementById("chatForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const input = document.getElementById("chatInput");
+        sendUserChatMessage(input.value);
+        input.value = "";
+      });
+
+      document.querySelectorAll(".chip-btn").forEach(chip => {
+        chip.addEventListener("click", () => {
+          const topic = chip.textContent.replace(/^[^\wÁÉÍÓÚáéíóúÑñ]+/, "").trim();
+          sendUserChatMessage(topic);
+        });
+      });
+
+      // Inicializar iconos Lucide
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
